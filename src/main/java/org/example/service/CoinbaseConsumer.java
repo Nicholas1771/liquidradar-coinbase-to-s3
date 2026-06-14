@@ -2,7 +2,7 @@ package org.example.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.config.CoinbaseConfig;
+import org.example.config.Config;
 import org.example.http.CoinbaseWebSocketListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -17,9 +17,9 @@ import java.util.concurrent.CountDownLatch;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class CoinbaseProducer {
+public class CoinbaseConsumer {
 
-    private final CoinbaseConfig coinbaseConfig;
+    private final Config.CoinbaseConfig coinbaseConfig;
 
     @Autowired
     private final BlockingQueue<String> queue;
